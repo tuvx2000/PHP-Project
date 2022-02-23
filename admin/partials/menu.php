@@ -1,3 +1,6 @@
+ <?php include('../config/constants.php'); ?> 
+
+
 <html>
     <head>
     <title> Food Order Website   </title>
@@ -7,7 +10,16 @@
 
     <body>
 <!--menu section start-->
+
+
 <div class="Menu text-center">
+
+<div class="wrapper">
+
+    </div>
+
+
+
     <div class="wrapper">
     <ul>
         <li><a href="index.php">Home</a></li>
@@ -19,3 +31,5 @@
     </div>
 </div>
 <!--menu section end-->
+
+

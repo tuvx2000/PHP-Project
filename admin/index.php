@@ -32,5 +32,62 @@
     </div>
  </div>
 
+ <br>
+ <form action="" method="POST">
+    Name: <input type="text" name="name"><br>
+    Description: <input type="text" name="description"><br>
+
+    <input type="submit" name="submit">
+</form>
+
 <!--menu main content  end-->
 <?php include('partials/footer.php'); ?>
+
+
+<?php 
+
+if(isset($_POST['submit']) && !empty($_POST['submit'])) {
+    
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
+
+    // Query to Save the data indo DB
+    $sql = "INSERT INTO table_dump SET
+        name= '$name',
+        description ='$description'
+        ";
+
+    // Execute Query and save data in the DB
+
+
+    // define('LOCALHOST','localhost');
+    // define('DB_USERNAME','root');
+    // define('DB_PASSWORD','');
+    // define('DB_NAME','php-project-db');
+
+
+
+    // $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD) or die(mysqli_error()); // DB connection
+    // $db_select = mysqli_select_db($conn,DB_NAME) or die(mysqli_error()); // Selecting DB
+
+
+
+
+
+    $res = mysqli_query($conn,$sql) or die(mysqli_error());
+    // check process
+
+    if($res == TRUE){
+        echo "Data Inserted";
+    }
+    else
+    {
+        echo "Failed to Inserted";
+    }
+
+
+  }
+
+?>
+
