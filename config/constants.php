@@ -1,5 +1,8 @@
 <?php 
+
+    session_start();
 // Create constant to store non repeating values
+    define('SITEURL','http://localhost/PHP-Project/');
     define('LOCALHOST','localhost');
     define('DB_USERNAME','root');
     define('DB_PASSWORD','');
@@ -8,6 +11,6 @@
 
 
 $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD) or die(mysqli_error()); // DB connection
-$db_select = mysqli_select_db($conn,DB_NAME) or die(mysqli_error()); // Selecting DB
+$db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); // Selecting DB
 
 ?>
