@@ -8,7 +8,7 @@
 
             <br /><br />
 
-            <a href="#" class="btn-primary">Add Category</a>
+            <a href="" class="btn-primary">Add Category</a>
 
             <br /><br />
             <table class="tbl-full">

@@ -3,14 +3,14 @@
 
 <div class="main-content">
     <div class="wapper">
-        <h1>Add Admin</h1>
+        <h1 class="admin-h1">Add Admin</h1>
 
         <br><br>
 
         <?php
             if(isset($_SESSION['add'])){
                 echo $_SESSION['add'];
-                unset($_SESSION );
+                unset($_SESSION['add']);
             }
         ?>
 
