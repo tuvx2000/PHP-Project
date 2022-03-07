@@ -17,16 +17,22 @@
             $count = mysqli_num_rows($res);
             if ($count ==1)
             {
+<<<<<<< HEAD
                 //echo "con cho";
+=======
+>>>>>>> 2cb0234852fd7c5370a5416be54e2c25cb84a082
                 $row=mysqli_fetch_assoc($res);
 
                 $full_name=$row['full_name'];
                 $user_name=$row['user_name'];
             }
+<<<<<<< HEAD
             else
             {
                 header('location:'.SITEURL.'admin/manage-admin.php');   
             }
+=======
+>>>>>>> 2cb0234852fd7c5370a5416be54e2c25cb84a082
         }
     ?>
 
@@ -35,21 +41,34 @@
             <tr>
                 <td>Full Name: </td>
                 <td>
+<<<<<<< HEAD
                     <input type="text" name="full_name" value="<?php echo$full_name;?>">
+=======
+                    <input type="text" name="full_name" value="<?php echo$full_name?>">
+>>>>>>> 2cb0234852fd7c5370a5416be54e2c25cb84a082
                 </td>
             </tr>
 
             <tr>
                 <td>username: </td>
                 <td>
+<<<<<<< HEAD
                     <input type="text" name="user_name" value="<?php echo$user_name;?>">
+=======
+                    <input type="text" name="user_name" value="<?php echo$user_name?>">
+>>>>>>> 2cb0234852fd7c5370a5416be54e2c25cb84a082
                 </td>
             </tr>
 
             <tr>
                 <td colspan="2">
+<<<<<<< HEAD
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="submit" name="submit" value="Update Admin" class="btn-secondary">
+=======
+                    <input type="hiden" name="id" value="<?php echo $id; ?>">
+                    <input type="submit" value="submit" value="Update Admin" class="btn-secondary">
+>>>>>>> 2cb0234852fd7c5370a5416be54e2c25cb84a082
                 </td>
             </tr>
         </table>
@@ -64,12 +83,21 @@
         //echo "Button Clicked"
         $id=$_POST['id'];
         $full_name = $_POST['full_name'];
+<<<<<<< HEAD
         $user_name=  $_POST['user_name'];
         ////////////
 
         $sql = "UPDATE tbl_admin SET
         full_name= '$full_name',
         user_name= '$user_name'
+=======
+        $user_name= $_POST['user_name'];
+        ////////////
+
+        $sql = "UPDATE FROM tbl_admin SET
+        full_name= '$full_name',
+        user_name= '$user_name',
+>>>>>>> 2cb0234852fd7c5370a5416be54e2c25cb84a082
         WHERE id='$id'
         ";
         //////////

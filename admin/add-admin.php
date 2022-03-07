@@ -60,7 +60,7 @@
        $sql = "INSERT INTO tbl_admin SET
             full_name ='$full_name',
             user_name ='$user_name',
-            password = '$password'
+            pass_word = '$password'
         ";
 
          
