@@ -13,11 +13,11 @@
                 unset($_SESSION['add']);
             }
 
-            if(isset($_SESSION['upload']))
+            if(isset($_SESSION['upload']))  
             {
                 echo $_SESSION['upload'];
                 unset($_SESSION['upload']);
-            }
+            }  
         ?>
 
         <br /> <br />
@@ -97,21 +97,25 @@
             {
                 $image_name = $_FILES['image']['name'];
 
-                $ext = end(explode('.', $image_name));
-
-                $image_name = "Food_Category_".rand(000,999).'.'.$ext;
-
-                $source_path = $_FILES['image']['tmp_name'];
-
-                $destination_path = "../images/".$image_name;
-
-                $upload = move_uploaded_file($source_path, $destination_path);
-
-                if($upload == false)
+                if($image_name != "")
                 {
-                    $_SESSION['upload'] = "<div class='error'>Failed to Upload Image.</div>";
-                    header('location:'.SITEURL. 'admin/manage-category.php');
-                    die();
+
+                    $ext = end(explode('.', $image_name));
+
+                    $image_name = "Food_Category_".rand(000,999).'.'.$ext;
+
+                    $source_path = $_FILES['image']['tmp_name'];
+
+                    $destination_path = "../images/".$image_name;
+
+                    $upload = move_uploaded_file($source_path, $destination_path);
+
+                    if($upload == false)
+                    {
+                        $_SESSION['upload'] = "<div class='error'>Failed to Upload Image.</div>";
+                        header('location:'.SITEURL. 'admin/add-category.php');
+                        die();
+                    }
                 }
             }
             else
