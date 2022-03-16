@@ -168,7 +168,7 @@
                     $image_name = "";
                 }
 
-                $sql2 = "INSERT INTO tbl_food SET
+                $sql2 = "INSERT INTO tbl_product SET
                 title = '$title',
                 description = '$description',
                 price = $price,
@@ -183,12 +183,12 @@
                 if($res2==true)
                 {
                     $_SESSION['add'] = "<div class='success'> Food Added Successfully.</div>";
-                    header('location:'.SITEURL. 'admin/manage-food.php');
+                    header('location:'.SITEURL. 'admin/manage-product.php');
                 }
                 else
                 {
                     $_SESSION['add'] = "<div class='error'> Failed To  Add Food.</div>";
-                    header('location:'.SITEURL. 'admin/manage-food.php');
+                    header('location:'.SITEURL. 'admin/manage-product.php');
                 }
              }
         ?>

@@ -24,7 +24,7 @@
                 }
              ?>
              <br><br>
-            <form action="" method="POST" class="text-center">
+            <form class="form_login" action="" method="POST" class="text-center">
                 Username:<br>
                 <input type = "text" name="username" placeholder="Enter Username"><br><br>
                 Password:<br>
@@ -47,7 +47,7 @@
         $username = $_POST['username'];
         $password = md5($_POST['password']);
 
-        $sql = "SELECT * FROM tbl_admin WHERE user_name ='$username' AND password ='$password'";
+        $sql = "SELECT * FROM tbl_admin WHERE user_name ='$username' AND pass_word ='$password'";
 
         $res = mysqli_query($conn, $sql);
 

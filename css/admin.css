@@ -133,9 +133,10 @@ table tr td {
     color: red;
 }
 
-.login {
+.Login {
     border: 1px solid #1e90ff;
     width: 20%;
-    margin: 10% auto;
+    margin: auto;
     padding: 2%;
+   
 }

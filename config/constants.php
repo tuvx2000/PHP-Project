@@ -2,7 +2,7 @@
 
     session_start();
 // Create constant to store non repeating values
-    define('SITEURL','http://localhost:8080/php-project/');
+    define('SITEURL','http://localhost/PHP-Project/');
     define('LOCALHOST','localhost');
     define('DB_USERNAME','root');
     define('DB_PASSWORD','');

@@ -13,7 +13,7 @@
 
                 $sql="SELECT * From tbl_category WHERE id=$id";
 
-                $res = mysqli_query($comn,$sql);
+                $res = mysqli_query($conn,$sql);
 
                 $count = mysqli_num_rows($res);
 

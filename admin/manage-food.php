@@ -1,12 +1,12 @@
-<?php include('partials/menu.php'); ?>
+ <?php include('partials/menu.php'); ?> 
 
 
-<!--menu main content  start-->
+
 <div class="Main-Content">
     <div class="wrapper">
         <h1><strong> Manage Food </strong><h1>      
             
-            <a href="<?php echo SITEUR ?>admin/add-food.php" class="btn-primary">Add Food</a>
+            <a href="<?php echo SITEURL ?>admin/add-food.php" class="btn-primary">Add Food</a>
 
             <br /><br /><br />
 
@@ -17,6 +17,31 @@
                     unset($_SESSION['add']);
                 }
 
+                if(isset($_SESSION['delete']))
+                {
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                }
+
+                if(isset($_SESSION['upload']))
+                {
+                    echo $_SESSION['upload'];
+                    unset($_SESSION['upload']);
+                }
+
+                if(isset($_SESSION['unauthorize']))
+                {
+                    echo $_SESSION['unauthorize'];
+                    unset($_SESSION['unauthorize']);
+                }
+
+
+                if(isset($_SESSION['update']))
+                {
+                    echo $_SESSION['update'];
+                    unset($_SESSION['update']);
+    
+                }                
             ?>
             <table class="tbl-full">
                 <tr>
@@ -30,7 +55,7 @@
                 </tr>
 
                 <?php
-                    $sql = "SELECT * tbl_food";
+                    $sql = "SELECT * FROM tbl_product";
 
                     $res = mysqli_query($conn,$sql);
 
@@ -63,7 +88,8 @@
                                         else
                                         {
                                             ?>
-                                            <img src="<?php echo SITEURL; ?>image/food/<?php echo $image_name; ?>" width="100px" >
+                                            <img src="<?php echo SITEURL; ?>image/food/
+                                            <?php echo $image_name; ?>" width="100px">
                                             <?php
                                         }
                                         ?>
@@ -71,8 +97,11 @@
                                     <td><?php echo $featured; ?></td>
                                     <td><?php echo $active; ?></td>
                                     <td>
-                                        <a href ="#" class="btn-secondary">Update Food</a>
-                                        <a href ="#" class="btn-danger">Delete Food</a>
+                                        <a href ="<?php echo SITEURL; ?>admin/add-food.php" 
+                                        class="btn-secondary">Update Food</a>
+                                        <a href ="<?php echo SITEURL; ?>admin/delete-food.php?
+                                        id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" 
+                                        class="btn-danger">Delete Food</a>
                                     </td>
                                 </tr>
 
