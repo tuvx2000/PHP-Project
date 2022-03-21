@@ -55,7 +55,7 @@
                 </tr>
 
                 <?php
-                    $sql = "SELECT * FROM tbl_product";
+                    $sql = "SELECT * FROM tbl_food";
 
                     $res = mysqli_query($conn,$sql);
 
@@ -97,7 +97,7 @@
                                     <td><?php echo $featured; ?></td>
                                     <td><?php echo $active; ?></td>
                                     <td>
-                                        <a href ="<?php echo SITEURL; ?>admin/add-food.php" 
+                                        <a href ="<?php echo SITEURL; ?>admin/update-food.php" 
                                         class="btn-secondary">Update Food</a>
                                         <a href ="<?php echo SITEURL; ?>admin/delete-food.php?
                                         id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" 

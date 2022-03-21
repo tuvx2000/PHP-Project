@@ -47,7 +47,7 @@
         $username = $_POST['username'];
         $password = md5($_POST['password']);
 
-        $sql = "SELECT * FROM tbl_admin WHERE user_name ='$username' AND pass_word ='$password'";
+        $sql = "SELECT * FROM tbl_admin WHERE user_name ='$username' AND password ='$password'";
 
         $res = mysqli_query($conn, $sql);
 

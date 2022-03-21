@@ -1,52 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Important to make website responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
+  <?php include('partials-front/menu.php'); ?>  
 
-    <!-- Link our CSS file -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <!-- Navbar Section Starts Here -->
-    <section class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
-                </a>
-            </div>
-
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="foods.html">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    <!-- Navbar Section Ends Here -->
+  <?php
+    if(isset($_GET['category_id']))
+    {
+        $category_id = $_GET['category_id'];
+        $sql="SELECT title FROM tbl_category WHERE id=$category_id";
+        $res = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($res);
+        $category_title = $row['title'];
+    }
+    else
+    {
+        header('Location:'.SITEURL);
+    }
+  ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
             
-            <h2>Foods on <a href="#" class="text-white">"Category"</a></h2>
+            <h2>Foods on <a href="#" class="text-white">"<?php echo $category_title?>"</a></h2>
 
         </div>
     </section>
@@ -58,6 +31,56 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Food Menu</h2>
+
+             <?php
+                $sql2="SELECT * FROM tbl_food WHERE category_id=$category_id";
+                $res2=mysqli_query($conn, $sql2);
+                $count2 = mysqli_num_rows($res2);
+
+                if($count2>0)
+                {
+                    while($row2=mysqli_fetch_assoc($res2)){
+                        $title=$row2['title'];
+                        $price=$row2['price'];
+                        $description=$row2['description'];
+                        $image_name= $row2['image_name'];
+                        ?>
+                            <div class="food-menu-box">
+                                <div class="food-menu-img">
+                                <?php
+                                    if($image_name=="")
+                                    {
+                                        echo "<div class='error'>Image not available.</div>";
+                                    }
+                                    else{
+                                        ?>
+                                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                        <?php
+                                        
+                                    }
+                                    ?>
+                                    
+                                </div>
+
+                                <div class="food-menu-desc">
+                                    <h4><?php echo $title; ?></h4>
+                                    <p class="food-price"><?php echo $title;?></p>
+                                    <p class="food-detail">
+                                        <?php echo $description;?>
+                                    </p>
+                                    <br>
+
+                                    <a href="#" class="btn btn-primary">Order Now</a>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                }
+                else
+                {
+                    echo "<div class='error'>Food not found</div>";
+                }
+             ?>
 
             <div class="food-menu-box">
                 <div class="food-menu-img">
@@ -171,31 +194,4 @@
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
-    <!-- social Section Starts Here -->
-    <section class="social">
-        <div class="container text-center">
-            <ul>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- social Section Ends Here -->
-
-    <!-- footer Section Starts Here -->
-    <section class="footer">
-        <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">Vijay Thapa</a></p>
-        </div>
-    </section>
-    <!-- footer Section Ends Here -->
-
-</body>
-</html>
+    <?php include('partials-front/footer.php'); ?>  
