@@ -9,7 +9,7 @@
     <body>
         <div class="Login">
             <h1 class="text-center">Login</h1>
-            <br><br>
+            <br>
             <?php
                 if(isset($_SESSION['login']))
                 {

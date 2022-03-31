@@ -1,4 +1,4 @@
-<?php include('partials/menu.php'); ?>
+<?php include('partials-front/menu.php'); ?>
 <div class = "main-content">
     <div class="wrapper">
         <h1>Add Category</h1>
@@ -150,6 +150,6 @@
 
 </div>
 
-<?php include('partials/footer.php'); ?>
+<?php include('partials-front/footer.php'); ?>
 
 

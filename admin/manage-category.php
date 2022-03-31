@@ -1,4 +1,4 @@
-<?php include('partials/menu.php'); ?>
+ <?php include('partials/menu.php'); ?>
 
 
 <!--menu main content  start-->
@@ -85,14 +85,14 @@
 
                             ?>
                                 <tr>
-                                     <?php echo $sn++; ?>
+                                     <td><?php echo $sn++; ?></td>
                                     <td><?php echo $title; ?></td>
                                     <td>
                                         <?php 
                                             if($image_name!="")
                                             {
                                                 ?>
-                                                <img src = "<?php echo SITEURL; ?> images/<?php echo $image_name; ?>" width="100px">
+                                                <img src = "<?php echo SITEURL; ?> images/food<?php echo $image_name; ?>" width="100px">
                                                 <?php
                                             }
                                             else
@@ -115,7 +115,7 @@
                     {
                         ?>
                         <tr>
-                            <td colspan ="6"class="error">No Category Added.</td>
+                            <td colspan ="6"><div class="error">No Category Added.</div></td>
                         </tr>
                         <?php
                     }
