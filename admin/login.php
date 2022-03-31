@@ -3,7 +3,7 @@
 <html>
     <dead>
         <title>Login - Food Order System</title>
-        <link rel = "stylesheet" herl = "../css/admin.css">
+        <link rel = "stylesheet" href = "../css/admin.css">
     </dead>
 
     <body>
@@ -34,7 +34,7 @@
                 <br><br>
             </form>
             <p class="text-center">
-                Created By - <a herl = "www.vijaythapa.com">Vijay Thapa</a>
+                Created By - <a href = "www.vijaythapa.com">Vijay Thapa</a>
             </p>
         </div>
     </body>
